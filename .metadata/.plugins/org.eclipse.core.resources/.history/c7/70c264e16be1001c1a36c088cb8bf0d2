@@ -1,0 +1,12 @@
+package com.example.studentcrudproject.service;
+
+import com.example.studentcrudproject.dto.StudentDTO;
+import com.example.studentcrudproject.utility.APIResponse;
+
+public interface StudentService {
+
+	StudentDTO get(int studentId);
+	
+	APIResponse create(StudentDTO studentDTO);
+}
+ 
