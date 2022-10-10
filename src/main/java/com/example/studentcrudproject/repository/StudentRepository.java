@@ -10,8 +10,9 @@ import com.example.studentcrudproject.entity.Student;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
 
-	Student findById(int studentId);
-	Student findByIdAndStatus(int studentId, int status);
-	List<Student> findByName(String name);
-	List<Student> findByPhone(String phone);
+    Student findById(int studentId);
+
+    List<Student> findByName(String name);
+
+    List<Student> findByPhone(String phone);
 }

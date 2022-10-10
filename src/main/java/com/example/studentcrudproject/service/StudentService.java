@@ -8,21 +8,19 @@ import com.example.studentcrudproject.utility.APIResponse;
 
 public interface StudentService {
 
-	StudentDTO get(int studentId);
-	
-	APIResponse create(StudentDTO studentDTO);
+    StudentDTO get(int studentId);
 
-	APIResponse getStudent();
+    APIResponse create(StudentDTO studentDTO);
 
-	APIResponse getText();
+    APIResponse getStudent();
 
-	APIResponse update(StudentDTO studentDTO, int studentId);
+    APIResponse update(StudentDTO studentDTO, int studentId);
 
-	APIResponse delete(int studentId);
+    APIResponse delete(int studentId);
 
-	List<Student> getN(String name);
+    List<Student> getN(String name);
 
-	List<Student> getP(String phone);
+    List<Student> getP(String phone);
 
 }
  

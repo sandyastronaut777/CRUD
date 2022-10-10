@@ -12,27 +12,26 @@ import com.example.studentcrudproject.utility.APIResponse;
 public interface StudentApi {
 
 
-	@GetMapping(value = "/student/get/{student-id}", produces = {"application/json"})
-	ResponseEntity<StudentDTO> get(@PathVariable(value = "student-id", required = true) int studentId);
+    @GetMapping(value = "/student/get/{student-id}", produces = {"application/json"})
+    ResponseEntity<StudentDTO> get(@PathVariable(value = "student-id", required = true) int studentId);
 
-	@PostMapping(value = "/student/create", produces = {"application/json"})
-	APIResponse create(@RequestBody StudentDTO studentDTO);
+    @PostMapping(value = "/student/create", produces = {"application/json"})
+    APIResponse create(@RequestBody StudentDTO studentDTO);
 
-	@GetMapping(value = "/students/get", produces = {"application/json"})
-	APIResponse getStudent();
+    @GetMapping(value = "/students/get", produces = {"application/json"})
+    APIResponse getStudent();
 
     @PutMapping(value = "/student/update/{student-id}", produces = {"application/json"})
-	APIResponse update(@RequestBody StudentDTO studentDTO, @PathVariable(required = true) int studentId);
+    APIResponse update(@RequestBody StudentDTO studentDTO, @PathVariable(required = true) int studentId);
 
-	@DeleteMapping(value = "/student/delete/{student-id}")
-	APIResponse delete(@PathVariable(value = "student-id", required = true) int studentId);
+    @DeleteMapping(value = "/student/delete/{student-id}")
+    APIResponse delete(@PathVariable(value = "student-id", required = true) int studentId);
 
-	@GetMapping(value = "/student/gets", produces = {"application/json"})
-	ResponseEntity<List<Student>> getN(@RequestParam(name = "name") String name);
+    @GetMapping(value = "/student/gets", produces = {"application/json"})
+    ResponseEntity<List<Student>> getN(@RequestParam(name = "name") String name);
 
-	@GetMapping(value = "/student/get", produces = {"application/json"})
-	ResponseEntity<List<Student>> getP(@RequestParam(value = "phone") String phone);
+    @GetMapping(value = "/student/get", produces = {"application/json"})
+    ResponseEntity<List<Student>> getP(@RequestParam(value = "phone") String phone);
 
-	@GetMapping(value = "/welcome", produces = {"application/json"})
-	APIResponse getText();
+
 }

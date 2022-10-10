@@ -19,51 +19,44 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 public class StudentApiController implements StudentApi {
 
-	@Autowired
-	private StudentService studentService;
+    @Autowired
+    private StudentService studentService;
 
-	@Override
-	public ResponseEntity<StudentDTO> get(int studentId) {
-		return ResponseEntity.ok(studentService.get(studentId));
+    @Override
+    public ResponseEntity<StudentDTO> get(int studentId) {
+        return ResponseEntity.ok(studentService.get(studentId));
+    }
 
+    @Override
+    public APIResponse create(StudentDTO studentDTO) {
+        return studentService.create(studentDTO);
+    }
 
-	}
+    @Override
+    public APIResponse getStudent() {
+        return studentService.getStudent();
 
-	@Override
-	public APIResponse create(StudentDTO studentDTO) {
-		return studentService.create(studentDTO);
-	}
-
-	@Override
-	public APIResponse getStudent() {
-		return studentService.getStudent();
-
-	}
-
-	@Override
-	public APIResponse getText(){
-		return studentService.getText();
-	}
+    }
 
 
-	@Override
-	public APIResponse update(StudentDTO studentDTO, int studentId) {
-		return studentService.update(studentDTO, studentId);
-	}
+    @Override
+    public APIResponse update(StudentDTO studentDTO, int studentId) {
+        return studentService.update(studentDTO, studentId);
+    }
 
-	@Override
-	public APIResponse delete(int studentId) {
-		return studentService.delete(studentId);
-	}
+    @Override
+    public APIResponse delete(int studentId) {
+        return studentService.delete(studentId);
+    }
 
     @Override
     public ResponseEntity<List<Student>> getN(String name) {
         return ResponseEntity.ok(studentService.getN(name));
     }
 
-	@Override
-	public ResponseEntity<List<Student>> getP(String phone) {
-		return ResponseEntity.ok(studentService.getP(phone));
-	}
+    @Override
+    public ResponseEntity<List<Student>> getP(String phone) {
+        return ResponseEntity.ok(studentService.getP(phone));
+    }
 }
 
